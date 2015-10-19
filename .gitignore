@@ -1,0 +1,10 @@
+node_modules
+public/*.js
+public/*.css
+.DS_Store
+*.log
+.sass-cache
+.ruby-version
+*.map
+*.db
+.env
