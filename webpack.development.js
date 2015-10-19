@@ -30,20 +30,30 @@ module.exports = {
     })
   ],
   module: {
-    loaders: [{
-      test: /\.js?$/,
-      exclude: /node_modules/,
-      loader: 'babel'
-    }, {
-      test: /\.json?$/,
-      loader: 'json'
-    }, {
-      test: /\.css$/,
-      loader: 'style!css'
-    }, {
-      test: /\.styl$/,
-      loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]!stylus'
-    }]
+    loaders: [
+      {
+        test: /(\.jsx|\.js)$/,
+        exclude: /node_modules/,
+        loader: 'babel'
+      },
+      {
+        test: /(\.jsx|\.js)$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader'
+      },
+      {
+        test: /\.json?$/,
+        loader: 'json'
+      },
+      {
+        test: /\.css$/,
+        loader: 'style!css'
+      },
+      {
+        test: /\.styl$/,
+        loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]!stylus'
+      }
+  ]
   },
   _hotPort: 4567
 };
