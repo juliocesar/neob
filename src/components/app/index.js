@@ -10,3 +10,7 @@ export default class App extends React.Component {
     </div>
   }
 }
+
+App.propTypes = {
+  children: React.PropTypes.node
+}
