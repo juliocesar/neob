@@ -9,7 +9,7 @@ import TestUtils from 'react-addons-test-utils'
 describe('App', () => {
   const component = utils.shallowlyRenderedOutput(<App />)
 
-  it('should have a div as container', () => {
+  it('should have a main as container', () => {
     expect(component.type).to.equal('main')
   })
 })
