@@ -10,8 +10,6 @@ import Router from 'react-router'
 import createHashHistory from 'history/lib/createHashHistory'
 import routes from './routes'
 
-// only for GitHub pages
-// do prefer createBrowserHistory
 const history = createHashHistory()
 
 ReactDOM.render(
