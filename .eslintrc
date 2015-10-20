@@ -9,6 +9,7 @@
     "browser": false,
     "es6": true,
     "node": true,
+    "mocha": true
   },
 
   "globals": {
@@ -16,7 +17,9 @@
     "escape": false,
     "navigator": false,
     "unescape": false,
-    "window": false
+    "window": false,
+    "expect": true,
+    "sinon": true
   },
 
   "plugins": [
