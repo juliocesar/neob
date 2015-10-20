@@ -1,10 +1,18 @@
-'use strict';
+// Webpack development config file
+// ===============================
 
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var StatsPlugin = require('stats-webpack-plugin');
+import path from 'path'
+import webpack from 'webpack'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import ExtractTextPlugin from 'extract-text-webpack-plugin'
+import StatsPlugin from 'stats-webpack-plugin'
+
+let styleLoadersString = [
+  'style',
+  'css?modules&localIdentName=[name]---[local]---[hash:base64:5]',
+  'postcss',
+  'stylus'
+].join('!')
 
 module.exports = {
   devtool: 'eval',
@@ -39,22 +47,30 @@ module.exports = {
     })
   ],
   module: {
-    loaders: [{
-      test: /\.js?$/,
-      exclude: /node_modules/,
-      loader: 'babel'
-    }, {
-      test: /\.json?$/,
-      loader: 'json'
-    }, {
-      test: /\.css$/,
-      loader: ExtractTextPlugin.extract('style', 'css')
-    }, {
-      test: /\.styl$/,
-      loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[name]---[local]---[hash:base64:5]!postcss!stylus')
-    }]
+    loaders: [
+      {
+        test: /\.js?$/,
+        exclude: /node_modules/,
+        loader: 'babel'
+      },
+      {
+        test: /\.json?$/,
+        loader: 'json'
+      },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('style', 'css')
+      },
+      {
+        test: /\.styl$/,
+        loader: ExtractTextPlugin.extract(
+          'style',
+          styleLoadersString
+        )
+      }
+    ]
   },
   postcss: [
     require('autoprefixer')
   ]
-};
+}
