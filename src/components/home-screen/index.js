@@ -26,10 +26,12 @@ export default class HomeScreen extends React.Component {
   }
 
   render() {
-    const deps = Object.keys(dependencies)
-      .map((dep, i) => <li key={i}><b>{dep}</b> : {dependencies[dep]}</li>)
-    const devDeps = Object.keys(devDependencies)
-      .map((dep, i) => <li key={i + 10}><b>{dep}</b> : {devDependencies[dep]}</li>)
+    const deps = Object.keys(dependencies).map((dep, i) => {
+      return <li key={i}><b>{dep}</b> : {dependencies[dep]}</li>
+    })
+    const devDeps = Object.keys(devDependencies).map((dep, i) => {
+      return <li key={i + 10}><b>{dep}</b> : {devDependencies[dep]}</li>
+    })
 
     return <section className="p1 tc">
       <div>
