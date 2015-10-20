@@ -2,7 +2,7 @@
   "scripts": {
     "test": "NODE_ENV=test mocha --require ./test/configure --compilers js:babel/register --recursive",
     "test:cov": "NODE_ENV=test babel-node $(npm bin)/isparta cover $(npm bin)/_mocha -- --require ./test/configure --recursive",
-    "start": "node ./bin/server.development",
+    "start": "babel-node ./bin/server.development",
     "start:production": "NODE_ENV=production node ./bin/server.production",
     "build": "rimraf dist && NODE_ENV=production webpack --config ./webpack.development.js --progress --profile --colors",
     "build:production": "rimraf dist && NODE_ENV=production webpack --config ./webpack.production.js --progress --profile --colors",
