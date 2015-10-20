@@ -23,8 +23,9 @@ describe('Components', () => {
 
       render() {
         return <div>
-          <Counter count={this.state.counter} onIncrement={this.increment}
-          />
+          <Counter
+            count={this.state.counter}
+            onIncrement={this.increment.bind(this)} />
         </div>
       }
     }
