@@ -11,7 +11,7 @@ import {
 } from '../../../package.json'
 import style from './index.styl'
 
-export default class Home extends React.Component {
+export default class HomeScreen extends React.Component {
   constructor(options = {}) {
     super(options)
     this.state = { counter: 0 }
