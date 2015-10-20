@@ -1,8 +1,15 @@
-'use strict';
+// Webpack development config file
+// ===============================
 
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+import path from 'path'
+import webpack from 'webpack'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+
+let styleLoadersString = [
+  'style',
+  'css?modules&localIdentName=[name]---[local]---[hash:base64:5]',
+  'stylus'
+].join('!')
 
 module.exports = {
   devtool: 'eval',
@@ -51,9 +58,9 @@ module.exports = {
       },
       {
         test: /\.styl$/,
-        loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]!stylus'
+        loader: styleLoadersString
       }
-  ]
+    ]
   },
   _hotPort: 4567
-};
+}
