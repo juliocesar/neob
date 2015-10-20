@@ -1,38 +1,40 @@
-import React from 'react';
-import Home from '../../src/components/home';
-import * as utils from '../utils';
-import {version} from '../../package.json';
+// HomeScreen component spec
+// =========================
 
-describe('Components', () => {
-  describe('Home', () => {
-    const component = utils.shallowlyRenderedOutput(< Home / >);
-    it('should contain one "<section>" element', () => {
-      expect(component.type).to.be.equal('section');
-    });
+import React from 'react'
+import HomeScreen from '../../src/components/home-screen'
+import * as utils from '../utils'
+import {version} from '../../package.json'
 
-    it('should contain a link to my twitter account', () => {
-      expect(component.props.children.props.children).to.contain(
-        <a href ="https://twitter.com/vesparny">@vesparny</a>);
-    });
+describe('HomeScreen', () => {
+  const component = utils.shallowlyRenderedOutput(<HomeScreen / >)
 
-    describe('getVersion', () => {
-      it('should return the current version when called', () => {
-        const currentVersion = Home.prototype.getVersion();
-        expect(currentVersion).to.be.equal(version);
-      });
-    });
+  it('should contain one "<section>" element', () => {
+    expect(component.type).to.be.equal('section')
+  })
 
-    describe('increment', () => {
-      it('should call setState() once invoked', () => {
-        const spy = sinon.spy();
-        Home.prototype.increment.call({
-          state: {
-            counter: 0
-          },
-          setState: spy
-        });
-        expect(spy).to.have.been.calledOnce;
-      });
-    });
-  });
-});
+  it('should contain a link to my twitter account', () => {
+    expect(component.props.children.props.children).to.contain(
+      <a href ="https://twitter.com/vesparny">@vesparny</a>
+    )
+  })
+
+  describe('getVersion', () => {
+    it('should return the current version when called', () => {
+      const currentVersion = HomeScreen.prototype.getVersion()
+
+      expect(currentVersion).to.be.equal(version)
+    })
+  })
+
+  describe('increment', () => {
+    it('should call setState() once invoked', () => {
+      const spy = sinon.spy()
+      HomeScreen.prototype.increment.call(
+        { state: { counter: 0 }, setState: spy }
+      )
+
+      expect(spy).to.have.been.calledOnce
+    })
+  })
+})

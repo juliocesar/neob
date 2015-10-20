@@ -1,18 +1,15 @@
-import React from 'react';
-import App from '../../src/components/App';
-import * as utils from '../utils';
-import TestUtils from 'react-addons-test-utils';
+// App component spec
+// ==================
 
-describe('Components', () => {
-  describe('App', () => {
-    const component = utils.shallowlyRenderedOutput(<App />);
+import React from 'react'
+import App from '../../src/components/app-wrapper'
+import * as utils from '../utils'
+import TestUtils from 'react-addons-test-utils'
 
-    it('should have a div as container', () => {
-      expect(component.type).to.equal('div');
-    });
+describe('App', () => {
+  const component = utils.shallowlyRenderedOutput(<App />)
 
-    it('should contain children', () => {
-      expect(typeof TestUtils.isElementOfType(component.props.children) !== 'undefined').to.be.true;
-    });
-  });
-});
+  it('should have a div as container', () => {
+    expect(component.type).to.equal('main')
+  })
+})
