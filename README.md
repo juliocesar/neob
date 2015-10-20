@@ -7,4 +7,4 @@ A build system for JS apps, using the stuff we like.
 - [x] ES6-ify everything, passing Lint
 - [x] Sane boilerplate tests
 - [ ] Use Sass instead of Stylus
-- [] Documentation
+- [ ] Documentation
