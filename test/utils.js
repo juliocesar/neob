@@ -1,8 +1,11 @@
-import TestUtils from 'react-addons-test-utils';
+// Test utilities
+// ==============
+
+import TestUtils from 'react-addons-test-utils'
 
 export function shallowlyRenderedOutput(Component) {
-  const shallowRenderer = TestUtils.createRenderer();
-  shallowRenderer.render(Component);
+  const shallowRenderer = TestUtils.createRenderer()
+  shallowRenderer.render(Component)
 
-  return shallowRenderer.getRenderOutput();
+  return shallowRenderer.getRenderOutput()
 }
