@@ -5,12 +5,6 @@ import path from 'path'
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
-let styleLoadersString = [
-  'style',
-  'css?modules&localIdentName=[name]---[local]---[hash:base64:5]',
-  'stylus'
-].join('!')
-
 module.exports = {
   devtool: 'eval',
   entry: [
@@ -57,8 +51,13 @@ module.exports = {
         loader: 'style!css'
       },
       {
-        test: /\.styl$/,
-        loader: styleLoadersString
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        loader: [
+          'style',
+          'css?modules&localIdentName=[name]---[local]---[hash:base64:5]',
+          'ruby-sass'
+        ].join('!')
       }
     ]
   },

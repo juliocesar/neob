@@ -7,13 +7,6 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import StatsPlugin from 'stats-webpack-plugin'
 
-let styleLoadersString = [
-  'style',
-  'css?modules&localIdentName=[name]---[local]---[hash:base64:5]',
-  'postcss',
-  'stylus'
-].join('!')
-
 module.exports = {
   devtool: 'eval',
   entry: [
@@ -62,10 +55,14 @@ module.exports = {
         loader: ExtractTextPlugin.extract('style', 'css')
       },
       {
-        test: /\.styl$/,
+        test: /\.scss$/,
         loader: ExtractTextPlugin.extract(
-          'style',
-          styleLoadersString
+          ...[
+            'style',
+            'css?modules&localIdentName=[name]---[local]---[hash:base64:5]',
+            'postcss',
+            'ruby-sass'
+          ].join('!')
         )
       }
     ]
