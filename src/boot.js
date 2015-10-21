@@ -3,7 +3,7 @@
 
 import 'babel/polyfill'
 import 'normalize.css'
-import './stylesheets/globals.styl'
+import './stylesheets/globals.scss'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Router from 'react-router'
