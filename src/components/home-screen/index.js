@@ -9,7 +9,7 @@ import {
   homepage,
   devDependencies
 } from '../../../package.json'
-import style from './index.styl'
+import style from './index.scss'
 
 export default class HomeScreen extends React.Component {
   constructor(options = {}) {

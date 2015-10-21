@@ -1,6 +1,4 @@
-@import '../../stylesheets/variables'
-
-.block
-  @media $mobile
-    float left
-    width 50%
+.block {
+  float: left;
+  width: 50%;
+}

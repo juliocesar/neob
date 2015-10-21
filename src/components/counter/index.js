@@ -2,7 +2,7 @@
 // =================
 
 import React from 'react'
-import style from './index.styl'
+import style from './index.scss'
 
 export default class Counter extends React.Component {
   increment() {
