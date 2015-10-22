@@ -5,9 +5,9 @@ import React from 'react'
 
 export default class App extends React.Component {
   render() {
-    return <main>
+    return <div className="app-wrapper">
       {this.props.children}
-    </main>
+    </div>
   }
 }
 
