@@ -13,4 +13,4 @@ global.__DEV__ = true
 
 // Ensure requiring css not to throw
 require.extensions['.css'] = () => null
-require.extensions['.styl'] = () => null
+require.extensions['.scss'] = () => null
