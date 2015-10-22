@@ -1,9 +1,8 @@
 // Client boot file
 // ================
 
+import './stylesheets/reset.css'
 import 'babel/polyfill'
-import 'normalize.css'
-import './stylesheets/globals.scss'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Router from 'react-router'
@@ -14,5 +13,5 @@ const history = createHashHistory()
 
 ReactDOM.render(
   <Router children={routes} history={history} />,
-  document.getElementById('root')
+  document.querySelector('.main-wrapper')
 )
