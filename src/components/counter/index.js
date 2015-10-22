@@ -12,11 +12,13 @@ export default class Counter extends React.Component {
   render() {
     const {count} = this.props
 
-    return <div className={style.counter}>
-      <h1>Count: {count}</h1>
-      <p>Click the button to increment the counter</p>
-      <button className="p1" onClick={this.increment.bind(this)}>
-        Increment
+    return <div className={style.Counter}>
+      <h1 className={style.Heading}>Count: {count}</h1>
+      <p className={style.Paragraph}>
+        Click the button to increment the counter
+      </p>
+      <button className={style.Button} onClick={this.increment.bind(this)}>
+        ➕Increment
       </button>
     </div>
   }

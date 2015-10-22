@@ -7,9 +7,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  font-family: 'Raleway', sans-serif;
   width: 100%;
+  text-align: center;
 }
 
-.Header {
-  @include font-size(2);
+.Heading {
+  @include font-size(4);
 }

@@ -1,6 +1,23 @@
 // Counter styles
 // ==============
 
-.counter {
+@import 'dirg';
+
+.Counter {
   color: green;
+}
+
+.Heading {
+  @include font-size(2);
+}
+
+.Paragraph,
+.Button {
+  @include font-size(1);
+}
+
+.Button {
+  margin-top: units(2);
+  padding: units(.25);
+  border-bottom: 2px solid black;
 }
