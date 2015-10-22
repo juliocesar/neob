@@ -9,8 +9,8 @@
     "eslint": "eslint ."
   },
   "dependencies": {
+    "dirg": "git+https://github.com/juliocesar/dirg.git",
     "history": "^1.12.5",
-    "normalize.css": "^3.0.3",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
     "react-router": "1.0.0-rc3"
