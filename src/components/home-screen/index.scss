@@ -4,14 +4,12 @@
 @import 'dirg';
 
 .HomeScreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-
-  h1 {
-    @include font-size(2);
-  }
 }
 
-.block {
-  float: left;
-  width: 50%;
+.Header {
+  @include font-size(2);
 }

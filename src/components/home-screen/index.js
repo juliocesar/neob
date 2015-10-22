@@ -17,13 +17,12 @@ export default class HomeScreen extends React.Component {
 
   render() {
     return <section className={style.HomeScreen}>
-      <h1>
+      <h1 className={style.Heading}>
         Neob
       </h1>
       <Counter
         count={this.state.counter}
-        onIncrement={this.increment.bind(this)}
-      />
+        onIncrement={this.increment.bind(this)} />
     </section>
   }
 }
