@@ -2,7 +2,7 @@
 // ==================
 
 import React from 'react'
-import App from '../../src/components/app-wrapper'
+import App from '../../src/components/app'
 import * as utils from '../utils'
 
 describe('App', () => {
