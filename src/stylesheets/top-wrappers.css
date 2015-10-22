@@ -1,0 +1,8 @@
+/* Top wrapper styles */
+/* ================== */
+
+html,
+body,
+.main-wrapper {
+  height: 100%;
+}
