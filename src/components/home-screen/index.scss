@@ -1,3 +1,16 @@
+// Home screen styles
+// ==================
+
+@import 'dirg';
+
+.HomeScreen {
+  width: 100%;
+
+  h1 {
+    @include font-size(2);
+  }
+}
+
 .block {
   float: left;
   width: 50%;
