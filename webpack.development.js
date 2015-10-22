@@ -4,6 +4,7 @@
 import path from 'path'
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import dirg from 'dirg' // Remove if not using dirg
 
 module.exports = {
   devtool: 'eval',
@@ -56,7 +57,7 @@ module.exports = {
         loader: [
           'style',
           'css?modules&localIdentName=[name]---[local]---[hash:base64:5]',
-          'ruby-sass'
+          `ruby-sass?includePaths[]=${dirg.includePaths}`
         ].join('!')
       }
     ]
