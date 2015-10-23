@@ -13,7 +13,7 @@ module.exports = {
     path.join(__dirname, 'src/boot.js')
   ],
   output: {
-    path: path.join(__dirname, '/public/'),
+    path: path.join(__dirname, '/dist/'),
     filename: '[name]-[hash].min.js'
   },
   plugins: [
