@@ -1,6 +1,5 @@
 node_modules
-public/*.js
-public/*.css
+dist
 .DS_Store
 *.log
 .sass-cache
