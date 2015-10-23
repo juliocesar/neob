@@ -16,11 +16,11 @@ Yet another Webpack build system.
 
 * To start the dev server:
 
-    $ npm start
+      $ npm start
 
 * Build to static files in `dist`:
 
-    $ npm run build
+      $ npm run build
 
 Production configurations are used by appending `:production` to the commands above. So `$ npm run build:production` builds with production settings.
 
