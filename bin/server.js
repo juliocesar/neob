@@ -6,7 +6,7 @@ import express from 'express'
 import webpack from 'webpack'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleWare from 'webpack-hot-middleware'
-import config from '../webpack.development'
+import config from '../webpack.development.babel'
 
 let env = process.env.NODE_ENV || 'development'
 let app = express()
