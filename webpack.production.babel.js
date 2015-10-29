@@ -61,11 +61,14 @@ module.exports = {
             'style',
             'css?modules&localIdentName=[name]---[local]---[hash:base64:5]',
             'postcss',
-            'ruby-sass'
+            'sass'
           ].join('!')
         )
       }
     ]
+  },
+  sassLoader: {
+    includePaths: [dirg.includePaths]
   },
   postcss: [
     require('autoprefixer')

@@ -57,10 +57,13 @@ module.exports = {
         loader: [
           'style',
           'css?modules&localIdentName=[name]---[local]---[hash:base64:5]',
-          `ruby-sass?includePaths[]=${dirg.includePaths}`
+          'sass'
         ].join('!')
       }
     ]
+  },
+  sassLoader: {
+    includePaths: [dirg.includePaths]
   },
   _hotPort: 4567
 }
