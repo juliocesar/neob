@@ -56,14 +56,21 @@ module.exports = {
         exclude: /node_modules/,
         loader: [
           'style',
-          'css?modules&localIdentName=[name]---[local]---[hash:base64:5]',
+          [
+            'css?importLoaders=1',
+            'modules',
+            'localIdentName=[name]---[local]---[hash:base64:5]'
+          ].join('&'),
           'sass'
         ].join('!')
       }
     ]
   },
   sassLoader: {
-    includePaths: [dirg.includePaths]
+    includePaths: [
+      dirg.includePaths,
+      path.resolve(__dirname, 'src/stylesheets')
+    ],
   },
   _hotPort: 4567
 }
