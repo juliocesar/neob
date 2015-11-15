@@ -26,7 +26,11 @@ $ npm start
 $ npm run build
 ```
 
-Production configurations are used by appending `:production` to the commands above. So `$ npm run build:production` builds with production settings.
+* Compile static application and deploy it to GitHub pages (update `bin/publish-gh-page`) with your repository’s actual address:
+
+```
+$ ./bin/publish-gh-page
+```
 
 # Credits (y u no fork)
 
