@@ -2,9 +2,7 @@
   "scripts": {
     "test": "NODE_ENV=test mocha --require ./test/configure --compilers js:babel/register --recursive",
     "start": "babel-node ./bin/server",
-    "start:production": "NODE_ENV=production babel-node ./bin/server",
-    "build": "rimraf dist && NODE_ENV=development webpack --config ./webpack.development.babel.js --progress --profile --colors",
-    "build:production": "rimraf dist && NODE_ENV=production webpack --config ./webpack.production.babel.js --progress --profile --colors",
+    "build": "rimraf dist && NODE_ENV=production webpack --config ./webpack.production.babel.js --progress --profile --colors",
     "gh-page": "./bin/publish-gh-page",
     "eslint": "eslint ."
   },
