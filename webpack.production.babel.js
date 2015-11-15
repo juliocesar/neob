@@ -6,9 +6,16 @@ import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import StatsPlugin from 'stats-webpack-plugin'
+import dirg from 'dirg'
+
+let CSSLoaders = [
+  'css?importLoaders=1',
+  'modules&localIdentName=[name]---[local]---[hash:base64:5]!sass'
+].join('&')
+
 
 module.exports = {
-  devtool: 'eval',
+  devtool: 'cheap-source-map',
   entry: [
     path.join(__dirname, 'src/boot.js')
   ],
@@ -30,10 +37,8 @@ module.exports = {
         screw_ie8: true
       }
     }),
-    new StatsPlugin('webpack.stats.json', {
-      source: false,
-      modules: false
-    }),
+    new webpack.optimize.DedupePlugin(),
+    new StatsPlugin('webpack.stats.json', { source: false, modules: false }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
       '__DEV__': JSON.stringify(process.env.NODE_ENV)
@@ -56,19 +61,15 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract(
-          ...[
-            'style',
-            'css?modules&localIdentName=[name]---[local]---[hash:base64:5]',
-            'postcss',
-            'sass'
-          ].join('!')
-        )
+        loader: ExtractTextPlugin.extract('style', CSSLoaders)
       }
     ]
   },
   sassLoader: {
-    includePaths: [dirg.includePaths]
+    includePaths: [
+      dirg.includePaths,
+      path.resolve(__dirname, 'src/stylesheets')
+    ]
   },
   postcss: [
     require('autoprefixer')
