@@ -5,7 +5,7 @@ Yet another Webpack build system.
 # Features
 
 * Webpack + hot-module-replacement ([babel-plugin-react-transform](https://github.com/gaearon/babel-plugin-react-transform) + [react-transform-hmr](https://github.com/gaearon/react-transform-hmr)).
-* [css-modules](https://github.com/css-modules/css-modules/) + [Sass](https://github.com/ddelbondio/ruby-sass-loader) + [PostCSS](https://github.com/postcss/postcss).
+* [css-modules](https://github.com/css-modules/css-modules/) + [Sass](https://github.com/jtangelder/sass-loader) + [PostCSS](https://github.com/postcss/postcss).
 * Basic routing setup with react-router.
 * [babeljs](https://babeljs.io/).
 * Unit tests ([mocha](http://mochajs.org/) + [chai](http://chaijs.com/)) examples with both [shallow-rendering](https://facebook.github.io/react/docs/test-utils.html#shallow-rendering) and [jsdom](https://github.com/tmpvar/jsdom).
