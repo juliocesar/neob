@@ -26,7 +26,7 @@ $ npm start
 $ npm run build
 ```
 
-* Compile static application and deploy it to GitHub pages (update `bin/publish-gh-page`) with your repository’s actual address:
+* Compile static application and deploy it to GitHub pages (update `bin/publish-gh-page` with your repository’s actual address):
 
 ```
 $ ./bin/publish-gh-page
