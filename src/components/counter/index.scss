@@ -23,9 +23,9 @@
 .countLabel {
   @include font-size(4);
   font-weight: bold;
-  width: units(3);
-  height: units(3);
-  line-height: units(3);
+  width: units(4);
+  height: units(4);
+  line-height: units(4);
   border-radius: 100%;
   background: color('first', -5);
 }

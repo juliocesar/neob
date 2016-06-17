@@ -17,7 +17,6 @@ export default class Counter extends React.Component {
 
   render() {
     return <div className={style.Counter} onClick={this.onClick}>
-      <span className={style.label}>Count so far</span>
       <span className={style.countLabel}>{this.state.count}</span>
       <span className={style.label}>
         Click the number to increase the count

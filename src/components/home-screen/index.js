@@ -12,6 +12,11 @@ export default class HomeScreen extends React.Component {
         Neob
       </h1>
       <Counter count={0} />
+      <a
+        className={style.sourceLink}
+        href="https://github.com/juliocesar/neob">
+        ♥︎ Source on GitHub
+      </a>
     </section>
   }
 }
