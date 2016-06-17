@@ -5,6 +5,7 @@ import path from 'path'
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import dotenv from 'dotenv'
+import { includePaths } from 'dirg'
 
 dotenv.load()
 
@@ -81,7 +82,8 @@ module.exports = {
   ],
   sassLoader: {
     includePaths: [
-      path.resolve(__dirname, 'src/stylesheets')
+      path.resolve(__dirname, 'src/stylesheets'),
+      ...includePaths
     ]
   },
   _hotPort: 4567
