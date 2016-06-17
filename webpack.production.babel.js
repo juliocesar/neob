@@ -75,7 +75,8 @@ module.exports = {
     includePaths: [
       path.resolve(__dirname, 'src/stylesheets'),
       ...includePaths
-    ]
+    ],
+    data: [readTheme(process.env.THEME || 'default')]
   },
   postcss: [
     require('autoprefixer'),

@@ -5,6 +5,7 @@ import path from 'path'
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import dotenv from 'dotenv'
+import readTheme from './lib/read-theme'
 import { includePaths } from 'dirg'
 
 dotenv.load()
@@ -84,7 +85,8 @@ module.exports = {
     includePaths: [
       path.resolve(__dirname, 'src/stylesheets'),
       ...includePaths
-    ]
+    ],
+    data: [readTheme(process.env.THEME || 'default')]
   },
   _hotPort: 4567
 }
