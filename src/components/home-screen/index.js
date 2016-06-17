@@ -20,9 +20,7 @@ export default class HomeScreen extends React.Component {
       <h1 className={style.Heading}>
         Neob
       </h1>
-      <Counter
-        count={this.state.counter}
-        onIncrement={this.increment.bind(this)} />
+      <Counter count={0} />
     </section>
   }
 }
