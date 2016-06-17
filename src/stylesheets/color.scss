@@ -1,0 +1,20 @@
+// Colour scale function
+// =====================
+
+@function color($name, $scale: 0) {
+  @if ($scale > 5 or $scale < -5) {
+    @error "Scale argument cannot be #{$scale}. Passed with #{$name}";
+  }
+
+  $val: map-get($color-palette, $name);
+
+  @if $val {
+    @if $scale < 0 {
+      @return mix(white, $val, abs($scale) * $step-size);
+    } @else {
+      @return mix(black, $val, $scale * $step-size);
+    }
+  } @else {
+    @error "Couldn't find color with name #{$name}";
+  }
+}
