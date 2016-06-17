@@ -2,11 +2,18 @@
 // ==============
 
 @import 'dirg';
+@import 'color';
 
 .Counter {
   display: flex;
   flex-flow: column;
+  align-items: center;
   cursor: pointer;
+  color: color('first');
+
+  >* + * {
+    margin-top: units(1);
+  }
 }
 
 .label {
@@ -16,4 +23,9 @@
 .countLabel {
   @include font-size(4);
   font-weight: bold;
+  width: units(3);
+  height: units(3);
+  line-height: units(3);
+  border-radius: 100%;
+  background: color('first', -5);
 }
