@@ -7,6 +7,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import StatsPlugin from 'stats-webpack-plugin'
 import dotenv from 'dotenv'
+import readTheme from './lib/read-theme'
 import { includePaths } from 'dirg'
 
 dotenv.load()
