@@ -4,7 +4,9 @@
 import path from 'path'
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import dirg from 'dirg' // Remove if not using dirg
+import dotenv from 'dotenv'
+
+dotenv.load()
 
 module.exports = {
   devtool: 'eval',
@@ -13,7 +15,7 @@ module.exports = {
     path.join(__dirname, 'src/boot.js')
   ],
   output: {
-    path: path.join(__dirname, '/dist/'),
+    path: path.join(__dirname, '/build/'),
     filename: '[name].js',
     publicPath: '/'
   },
@@ -32,6 +34,12 @@ module.exports = {
     })
   ],
   module: {
+    preLoaders: [
+      {
+        test: /(\.jsx|\.js)$/,
+        loader: 'eslint'
+      }
+    ],
     loaders: [
       {
         test: /(\.jsx|\.js)$/,
@@ -39,17 +47,19 @@ module.exports = {
         loader: 'babel'
       },
       {
-        test: /(\.jsx|\.js)$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader'
-      },
-      {
         test: /\.json?$/,
+        exclude: /node_modules/,
         loader: 'json'
       },
       {
         test: /\.css$/,
+        exclude: /node_modules/,
         loader: 'style!css'
+      },
+      {
+        test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        exclude: /node_modules/,
+        loader: 'file-loader'
       },
       {
         test: /\.scss$/,
@@ -66,11 +76,13 @@ module.exports = {
       }
     ]
   },
+  postcss: [
+    require('postcss-modules-values')
+  ],
   sassLoader: {
     includePaths: [
-      dirg.includePaths,
       path.resolve(__dirname, 'src/stylesheets')
-    ],
+    ]
   },
   _hotPort: 4567
 }

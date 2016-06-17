@@ -6,13 +6,14 @@ import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import StatsPlugin from 'stats-webpack-plugin'
-import dirg from 'dirg'
+import dotenv from 'dotenv'
 
-let CSSLoaders = [
+dotenv.load()
+
+const CSSLoaders = [
   'css?importLoaders=1',
   'modules&localIdentName=[name]---[local]---[hash:base64:5]!sass'
 ].join('&')
-
 
 module.exports = {
   devtool: 'cheap-source-map',
@@ -20,7 +21,7 @@ module.exports = {
     path.join(__dirname, 'src/boot.js')
   ],
   output: {
-    path: path.join(__dirname, '/dist/'),
+    path: path.join(__dirname, '/build/'),
     filename: '[name]-[hash].min.js'
   },
   plugins: [
@@ -56,6 +57,10 @@ module.exports = {
         loader: 'json'
       },
       {
+        test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        loader: 'file-loader'
+      },
+      {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract('style', 'css')
       },
@@ -67,11 +72,11 @@ module.exports = {
   },
   sassLoader: {
     includePaths: [
-      dirg.includePaths,
       path.resolve(__dirname, 'src/stylesheets')
     ]
   },
   postcss: [
-    require('autoprefixer')
+    require('autoprefixer'),
+    require('postcss-modules-values')
   ]
 }
