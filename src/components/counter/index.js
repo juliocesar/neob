@@ -5,26 +5,29 @@ import React from 'react'
 import style from './index.scss'
 
 export default class Counter extends React.Component {
-  increment() {
-    return this.props.onIncrement()
+  constructor(options) {
+    super(options)
+    this.state = { count: this.props.count }
+    this.onClick = this.onClick.bind(this)
+  }
+
+  onClick() {
+    this.setState({ count: this.state.count + 1 })
   }
 
   render() {
-    const {count} = this.props
-
-    return <div className={style.Counter}>
-      <h1 className={style.Heading}>Count: {count}</h1>
-      <p className={style.Paragraph}>
-        Click the button to increment the counter
-      </p>
-      <button className={style.Button} onClick={this.increment.bind(this)}>
-        ➕Increment
-      </button>
+    return <div className={style.Counter} onClick={this.onClick}>
+      <span>Count so far</span>
+      <span>{this.state.count}</span>
+      <span>Click to increase the count</span>
     </div>
   }
 }
 
 Counter.propTypes = {
-  onIncrement: React.PropTypes.func.isRequired,
   count: React.PropTypes.number.isRequired
+}
+
+Counter.defaultProps = {
+  count: 0
 }
