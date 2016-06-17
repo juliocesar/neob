@@ -1,5 +1,5 @@
-// Main app container
-// ==================
+// App container
+// =============
 
 import React from 'react'
 import style from './index.scss'

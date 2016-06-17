@@ -8,11 +8,16 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  font-family: 'Raleway', sans-serif;
   width: 100%;
+  height: 100%;
   text-align: center;
+  font-family: 'Raleway', sans-serif;
 }
 
-.Heading {
+.heading {
   @include font-size(4);
+}
+
+.heading + * {
+  margin-top: units(1);
 }

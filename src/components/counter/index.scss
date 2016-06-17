@@ -4,20 +4,16 @@
 @import 'dirg';
 
 .Counter {
-  color: green;
+  display: flex;
+  flex-flow: column;
+  cursor: pointer;
 }
 
-.Heading {
-  @include font-size(2);
+.label {
+  @include font-size(0);
 }
 
-.Paragraph,
-.Button {
-  @include font-size(1);
-}
-
-.Button {
-  margin-top: units(2);
-  padding: units(.25);
-  border-bottom: 2px solid black;
+.countLabel {
+  @include font-size(4);
+  font-weight: bold;
 }
