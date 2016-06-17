@@ -1,4 +1,4 @@
-// App component spec
+// App component test
 // ==================
 
 import React from 'react'
