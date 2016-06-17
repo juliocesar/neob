@@ -11,9 +11,9 @@ A React/Webpack/(S)CSS Modules/testing applications boilerplate.
 * **Themes** using colour scales. Single mixin for consolidating colour sourcing.
 * **Sizing scales** (vertical rhythm and other goodies) done using [dirg](https://github.com/juliocesar/dirg).
 * Basic routing setup with [react-router](https://github.com/reactjs/react-router).
-* Tests using [Ava](https://github.com/avajs/ava/) and [Enzyme](http://airbnb.io/enzyme/)).
-* ESLint, with a slightly modified version of the [Feross Standard](https://github.com/feross/standard) as default. Drop your own `.eslintrc.json` file on top of it if you don’t like it.
-* **No Gulp/Grunt**. Automation is done by commands in `package.json`. More complex stuff done by scripts in `bin`.
+* Tests using [Ava](https://github.com/avajs/ava/) and [Enzyme](http://airbnb.io/enzyme/).
+* ESLint, with a slightly modified version of the [Feross Standard](https://github.com/feross/standard) as default, extended to include test files linting. Drop your own `.eslintrc.json` file on top of it if you don’t like it.
+* **No Gulp or Grunt**. Automation is done by commands in `package.json`. More complex stuff done by scripts in `bin`.
 
 ## Usage
 
