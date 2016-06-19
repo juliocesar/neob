@@ -54,6 +54,27 @@ $ THEME=green npm run build
 
 Refer to [dirg](https://github.com/juliocesar/dirg)’s documentation, or [the longer post](https://medium.com/@julio_ody/sizing-supra-summa-3701cd075244#.dhlhjf6vy) on it.
 
+You can override the default scale by supplying one in a separate file. Create (for example), a file `src/stylesheets/dirg-scale.scss` with:
+
+```
+$dirg-scales: (
+  default: (
+    font-size: 16px,
+    unit: 21px,
+    factor: 1.35
+  )
+);
+
+```
+
+Then source it right before dirg:
+
+```
+@import 'dirg-scale';
+@import 'dirg';
+…
+```
+
 # Credits (y u no fork)
 
 neob is based off of [react-kickstart](https://github.com/vesparny/react-kickstart). I wasn’t sure initially how much it’d look like it, so I went with a copy first. It has now diverged sufficiently anyway to become more than just a build boilerplate, but introduce a few helpers for building applications.
